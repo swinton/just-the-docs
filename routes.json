@@ -9,16 +9,8 @@
       "serve": "/.auth/logout"
     },
     {
-      "route": "/apply/*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/content/*",
-      "allowedRoles": ["select","advanced"]
-    },
-    {
-      "route": "/advanced/*",
-      "allowedRoles": ["advanced"]
+      "route": "/*",
+      "allowedRoles": ["partner"]
     },
     {
       "route": "/.auth/login/aad",
@@ -40,12 +32,12 @@
   "platformErrorOverrides": [
     {
       "errorType": "NotFound",
-      "serve": "/error.html"
+      "serve": "/404.html"
     },
     {
       "errorType": "Unauthorized_MissingRoles",
       "statusCode": "404",
-      "serve": "/error.html"
+      "serve": "/404.html"
     },
     {
       "errorType": "Unauthenticated",
