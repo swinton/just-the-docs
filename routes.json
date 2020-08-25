@@ -36,8 +36,8 @@
     },
     {
       "errorType": "Unauthorized_MissingRoles",
-      "statusCode": "404",
-      "serve": "/404.html"
+      "statusCode": "403",
+      "serve": "/403.html"
     },
     {
       "errorType": "Unauthenticated",
