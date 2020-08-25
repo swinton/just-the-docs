@@ -1,0 +1,56 @@
+{
+  "routes": [
+    {
+      "route": "/login",
+      "serve": "/.auth/login/github"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    },
+    {
+      "route": "/apply/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/content/*",
+      "allowedRoles": ["select","advanced"]
+    },
+    {
+      "route": "/advanced/*",
+      "allowedRoles": ["advanced"]
+    },
+    {
+      "route": "/.auth/login/aad",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/facebook",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/google",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": "404"
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "NotFound",
+      "serve": "/error.html"
+    },
+    {
+      "errorType": "Unauthorized_MissingRoles",
+      "statusCode": "404",
+      "serve": "/error.html"
+    },
+    {
+      "errorType": "Unauthenticated",
+      "statusCode": "302",
+      "serve": "/login"
+    }
+  ]
+}
