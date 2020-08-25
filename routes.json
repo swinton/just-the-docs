@@ -9,7 +9,7 @@
       "serve": "/.auth/logout"
     },
     {
-      "route": "/*",
+      "route": "/content/*",
       "allowedRoles": ["partner"]
     },
     {
