@@ -165,5 +165,21 @@ layout: table_wrappers
       <div class="search-overlay"></div>
     {% endif %}
   </div>
+  <script>
+    (function () {
+        document.addEventListener("DOMContentLoaded", async function (event) {
+          async function getUserInfo() {
+            const response = await fetch("/.auth/me");
+            const payload = await response.json();
+            const { clientPrincipal } = payload;
+            return clientPrincipal;
+          }
+
+          const userInfo = await getUserInfo();
+          window.userInfo = userInfo;
+          console.log(userInfo);
+        });
+    })();
+</script>
 </body>
 </html>
